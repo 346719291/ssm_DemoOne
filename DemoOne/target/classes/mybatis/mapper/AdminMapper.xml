@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.AdminMapper">
+  <select id="findAll" resultType="com.entity.Admin">
+    <!-- select * from caigouinfo  -->
+    SELECT * FROM (caigouinfo LEFT JOIN systemgoodslist ON caigouinfo.dindanhao=systemgoodslist.dindanhao)LEFT JOIN gongyinshaginfo ON caigouinfo.gongyingshang=gongyinshaginfo.gongyingshangman
+  </select>	
+  <select id="findAllList" resultType="com.entity.Admin">
+   select * from caigouinfo
+     </select>	
+     <select id="count" parameterType="com.entity.Admin" resultType="int">
+      SELECT COUNT(*) FROM admin WHERE adminname=#{adminname} AND adminpassword=#{adminpassword}
+     </select>
+   <update id="updateuser" parameterType="com.entity.Admin">
+  	UPDATE caigouinfo SET caihoutime=#{caihoutime},goods=#{goods},gongyingshang=#{gongyingshang},price=#{price},count=#{count},man=#{man},stacus=#{stacus},dindanhao=#{dindanhao} WHERE id=#{id}
+  </update>
+  <delete id="del" parameterType="com.entity.Admin">DELETE FROM caigouinfo WHERE id=#{id} </delete>
+<insert id="insertuser" parameterType="com.entity.Admin">
+<![CDATA[
+	INSERT INTO admin(adminname,adminemail,adminpassword) VALUES (#{adminname},#{adminemail},#{adminpassword})
+		]]>
+	</insert>
+</mapper>

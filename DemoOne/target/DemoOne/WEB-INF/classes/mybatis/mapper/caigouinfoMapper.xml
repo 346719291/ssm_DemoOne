@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.caigouinfoMapper">
+  <select id="findAll" resultType="BaseCaigouinfo">
+    <!-- select * from caigouinfo  -->
+    SELECT * FROM (caigouinfo LEFT JOIN systemgoodslist ON caigouinfo.dindanhao=systemgoodslist.dindanhao)LEFT JOIN gongyinshaginfo ON caigouinfo.gongyingshang=gongyinshaginfo.gongyingshangman
+  </select>	
+  <select id="findAllList" resultType="BaseCaigouinfo">
+   select * from caigouinfo
+     </select>	
+   <update id="updateuser" parameterType="BaseCaigouinfo">
+  	UPDATE caigouinfo SET caihoutime=#{caihoutime},goods=#{goods},gongyingshang=#{gongyingshang},price=#{price},count=#{count},man=#{man},stacus=#{stacus},dindanhao=#{dindanhao} WHERE id=#{id}
+  </update>
+  <delete id="del" parameterType="BaseCaigouinfo">DELETE FROM caigouinfo WHERE id=#{id} </delete>
+<insert id="insertuser" parameterType="BaseCaigouinfo">
+<![CDATA[
+	INSERT INTO caigouinfo VALUES (#{id},#{caihoutime},goods=#{goods},gongyingshang=#{gongyingshang},price=#{price},count=#{count},man=#{man},stacus=#{stacus},dindanhao=#{dindanhao})
+	]]>
+	</insert>
+</mapper>

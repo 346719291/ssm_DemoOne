@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.gonyinshangMapper">
+  <select id="findAll" resultType="BaseGongyinshaginfo">
+    SELECT * FROM gongyinshaginfo
+  </select>	
+  <update id="updateuser" parameterType="BaseGongyinshaginfo">
+  	UPDATE gongyinshaginfo SET username=#{username} ,gongyingshangman=#{gongyingshangman},phone=#{phone},otherOfWay=#{otherOfWay},gysposition=#{gysposition} WHERE id=#{id};
+  </update>
+  <delete id="del" parameterType="BaseGongyinshaginfo">DELETE FROM gongyinshaginfo WHERE id=#{id} </delete>
+  <insert id="insertuser" parameterType="BaseGongyinshaginfo">
+<![CDATA[
+	INSERT INTO gongyinshaginfo VALUES (#{id},#{username},#{gongyingshangman},#{phone},#{otherOfWay},#{gysposition})
+	]]>
+	
+</insert>
+</mapper>

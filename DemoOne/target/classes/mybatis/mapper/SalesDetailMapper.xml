@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.SalesDetailMapper">
+  <select id="Find_By_Page" resultType="com.entity.SalesDetail">
+    SELECT * FROM salesDetail WHERE marketid=#{marketid}  
+  </select>	
+  <update id="updateuser" parameterType="com.entity.SalesDetail">
+  UPDATE salesdetail SET goodsid=#{goodsid},number=#{number},xiaosoudate=#{xiaosoudate},username=#{username}  WHERE marketid=#{marketid}
+ </update>
+  <delete id="del" parameterType="com.entity.SalesDetail">DELETE FROM salesDetail WHERE marketid=#{marketid} </delete>
+  <insert id="insertuser" parameterType="com.entity.SalesDetail">
+<![CDATA[
+	INSERT INTO gongyinshaginfo VALUES (#{id},#{username},#{gongyingshangman},#{phone},#{otherOfWay},#{gysposition})
+	]]>
+	
+</insert>
+</mapper>

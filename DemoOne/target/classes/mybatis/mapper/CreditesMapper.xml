@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.CreditesMapper">
+  <select id="findAll" resultType="com.entity.Credites">
+  SELECT * FROM credites
+  </select>	
+  <select id="findAllList" resultType="com.entity.Credites">
+   select * from caigouinfo
+     </select>	
+   <update id="updateuser" parameterType="com.entity.Credites">
+   UPDATE credites SET credidsname=#{credidsname},credits=#{credits},discountrate=#{discountrate},creditsqq=#{creditsqq},creditsaddress=#{creditsaddress},dirthday=#{dirthday} WHERE cardnumber=#{cardnumber}
+  </update>
+  <delete id="del" parameterType="com.entity.Credites">DELETE FROM caigouinfo WHERE id=#{id} </delete>
+<insert id="insertuser" parameterType="com.entity.Credites">
+<![CDATA[
+	INSERT INTO credites VALUES (#{id},#{cardnumber},#{credidsname},#{credits},#{discountrate},#{creditsqq},#{creditsaddress},#{dirthday})
+	]]>
+	</insert>
+</mapper>

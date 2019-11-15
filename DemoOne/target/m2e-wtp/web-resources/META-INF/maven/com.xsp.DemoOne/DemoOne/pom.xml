@@ -1,0 +1,311 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.xsp.DemoOne</groupId>
+  <artifactId>DemoOne</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <dependencies>
+	<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
+<dependency>
+    <groupId>com.mchange</groupId>
+    <artifactId>c3p0</artifactId>
+    <version>0.9.2.1</version>
+</dependency>
+    
+    <dependency>
+	  	<groupId>org.mybatis</groupId>
+	 	<artifactId>mybatis</artifactId>
+	 	<version>3.4.5</version>
+	</dependency>
+	
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>4.3.5.RELEASE</version>
+    </dependency>
+    	<dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-jdbc</artifactId>  
+            <version>4.3.5.RELEASE</version>  
+        </dependency>  
+
+		<dependency> 
+		   <groupId>org.springframework.security</groupId>
+		   <artifactId>spring-security-config</artifactId>
+		   <version>3.1.4.RELEASE</version>
+		</dependency>
+
+<!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
+<dependency>
+    <groupId>commons-collections</groupId>
+    <artifactId>commons-collections</artifactId>
+    <version>3.1</version>
+</dependency>
+
+    <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-web</artifactId>
+	    <version>4.3.5.RELEASE</version>
+	</dependency>
+	<dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>2.6</version>
+    </dependency>
+        <dependency>  
+        <groupId>org.apache.commons</groupId>  
+        <artifactId>commons-dbcp2</artifactId>  
+        <version>2.1.1</version>  
+    </dependency>  
+    <!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+	<dependency>
+	    <groupId>commons-logging</groupId>
+	    <artifactId>commons-logging</artifactId>
+	    <version>1.1.3</version>
+	</dependency>
+    <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis-spring</artifactId>
+	    <version>1.3.2</version>
+	</dependency>
+    <dependency>
+        <groupId>commons-fileupload</groupId>
+        <artifactId>commons-fileupload</artifactId>
+        <version>1.3.3</version>
+    </dependency>
+
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+    </dependency>
+    <dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>5.1.39</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.taglibs</groupId>
+	    <artifactId>taglibs-standard-jstlel</artifactId>
+	    <version>1.2.5</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.taglibs</groupId>
+	    <artifactId>taglibs-standard-impl</artifactId>
+	    <version>1.2.5</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.taglibs</groupId>
+	    <artifactId>taglibs-standard-compat</artifactId>
+	    <version>1.2.5</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.taglibs</groupId>
+	    <artifactId>taglibs-standard-spec</artifactId>
+	    <version>1.2.5</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.aspectj</groupId>
+	    <artifactId>aspectjweaver</artifactId>
+	    <version>1.9.2</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>2.9.8</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-core</artifactId>
+	    <version>2.9.8</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-annotations</artifactId>
+	    <version>2.9.8</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-api</artifactId>
+	    <version>1.7.7</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+	<dependency>
+	    <groupId>log4j</groupId>
+	    <artifactId>log4j</artifactId>
+	    <version>1.2.17</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-log4j12</artifactId>
+	    <version>1.7.26</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aop</artifactId>
+	    <version>4.3.5.RELEASE</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-beans</artifactId>
+	    <version>4.3.5.RELEASE</version>
+	</dependency>
+	
+
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-tx</artifactId>
+	    <version>3.2.5.RELEASE</version>
+	</dependency>
+
+	
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>4.3.5.RELEASE</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>4.3.5.RELEASE</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-expression -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-expression</artifactId>
+	    <version>4.3.5.RELEASE</version>
+	</dependency>
+	<dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.14</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/jexcelapi/jxl -->
+	<dependency>
+	    <groupId>jexcelapi</groupId>
+	    <artifactId>jxl</artifactId>
+	    <version>2.6</version>
+	</dependency>
+        
+  </dependencies>
+ 	 <build>
+  		<plugins>
+  			  <!-- <plugin>
+			指定插件名称及版本号
+			<groupId>org.codehaus.cargo</groupId>
+			<artifactId>cargo-maven2-plugin</artifactId>
+			<version>1.6.6</version>
+			<configuration>
+			        是否说明，操作start、stop等后续操作必须等前面操作完成才能继续
+                  <wait>true</wait>
+		        容器的配置
+				<container>	
+		            指定tomcat版本		   
+					<containerId>tomcat9x</containerId>		
+		            指定类型：standalone, installed等			 
+					<type>installed</type>	
+		            指定Tomcat的位置，即catalina.home							  
+					<home>E:\apache-tomcat-9.0.17</home>	
+				</container>
+		        具体的配置
+				<configuration>	
+		            类型，existing:存在	   
+					<type>existing</type>			
+		            Tomcat的位置，即catalina.home					   
+					<home>E:\apache-tomcat-9.0.17</home>	
+				</configuration>
+				<deployables>								 部署设置
+					<deployable>							  部署的War包名等
+						<groupId>com.xsp.DemoOne</groupId>
+						<artifactId>DemoOne</artifactId>
+						<type>war</type>
+						<properties>
+							<context>DemoOne</context>   部署路径
+						</properties>
+					</deployable>
+				</deployables>
+				<deployer>											部署配置
+					<type>installed</type>						  类型
+				</deployer>
+			</configuration>
+			<executions>
+				执行的动作
+				<execution>
+					<id>verify-deployer</id>
+					<phase>install</phase>	  解析install
+					<goals>
+						<goal>deployer-deploy</goal>
+					</goals>
+				</execution>
+				<execution>
+					<id>clean-deployer</id>
+					<phase>clean</phase>
+					<goals>
+						<goal>deployer-undeploy</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin> -->
+			
+			<plugin>  
+		        <groupId>org.apache.maven.plugins</groupId>  
+		        <artifactId>maven-war-plugin</artifactId>  
+		        <version>3.0.0</version>  
+		        <configuration>  
+		            <webResources>  
+		                <resource>  
+		                    <directory>WebContent</directory>  
+		                </resource>  
+		            </webResources>  
+		        </configuration>  
+    		</plugin>
+    		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+    <finalName>DemoOne</finalName>
+    <resources>
+    
+			<resource>
+				<directory>src/main/resources</directory>
+					<includes>
+						<include>**/*.properties</include>
+						<include>**/*.xml</include>
+					</includes>
+					<filtering>false</filtering>
+			</resource>
+    </resources>
+    </build>
+</project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.userMapper">
+  <select id="selectuser" resultType="Basesuser">
+    select * from testDemo8 where id = #{id}
+  </select>
+  <select id="findAll" resultType="Basesuser">
+    select * from testDemo8
+  </select>
+  <update id="updateuser" parameterType="Basesuser">
+  	UPDATE testdemo8 SET username= #{username}, sex= #{sex} WHERE id= #{id};
+  </update>
+  <delete id="deleteuser" parameterType="Basesuser">DELETE FROM testdemo8 WHERE id=#{id}; </delete>
+<insert id="insertuser" parameterType="Basesuser">
+<![CDATA[
+	INSERT INTO testdemo8 (id,username,sex)VALUE (#{id},#{username},#{sex});
+	]]>
+	
+</insert>
+</mapper>

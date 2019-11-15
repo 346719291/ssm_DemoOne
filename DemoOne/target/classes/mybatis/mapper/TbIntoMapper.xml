@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.TbIntoMapper">
+  <select id="findAll" resultType="com.entity.TbInto">
+    <!-- select * from caigouinfo  -->
+    SELECT * FROM (caigouinfo LEFT JOIN systemgoodslist ON caigouinfo.dindanhao=systemgoodslist.dindanhao)LEFT JOIN gongyinshaginfo ON caigouinfo.gongyingshang=gongyinshaginfo.gongyingshangman
+  </select>	
+  <select id="findAllList" resultType="com.entity.TbInto">
+   select * from caigouinfo
+     </select>	
+   <update id="updateuser" parameterType="com.entity.TbInto">
+  	UPDATE caigouinfo SET caihoutime=#{caihoutime},goods=#{goods},gongyingshang=#{gongyingshang},price=#{price},count=#{count},man=#{man},stacus=#{stacus},dindanhao=#{dindanhao} WHERE id=#{id}
+  </update>
+  <delete id="del" parameterType="com.entity.TbInto">DELETE FROM caigouinfo WHERE id=#{id} </delete>
+<insert id="insertuser" parameterType="com.entity.TbInto">
+<![CDATA[
+	INSERT INTO tbinto VALUES (#{goodsinfomation},#{goodsdate},#{pici},#{number},#{product_time},#{baozhiqi})
+	]]>
+	</insert>
+</mapper>

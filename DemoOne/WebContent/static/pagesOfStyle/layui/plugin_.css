@@ -1,0 +1,9 @@
+@charset "UTF-8";
+.style_s thead tr{
+	height: 50px;
+	text-align: center;
+}
+.style_s tbody tr{
+	height: 50px;
+	text-align: center;
+}

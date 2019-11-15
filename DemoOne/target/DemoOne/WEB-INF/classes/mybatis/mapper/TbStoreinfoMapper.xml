@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.TbStoreinfoMapper">
+  <select id="findAll" resultType="com.entity.TbStoreinfo">
+   SELECT * FROM (tb_storeinfo LEFT JOIN tbinto ON tb_storeinfo.cunkuinfo=tbinto.goodsinfomation)LEFT JOIN tbfencang_list ON tbinto.goodsinfomation=tbfencang_list.changkuinfo LIMIT #{pageno},#{pagesize}
+  </select>	
+  <select id="findAllList" resultType="com.entity.TbStoreinfo">
+   select * from caigouinfo
+  </select>	
+  <update id="updateuser" parameterType="com.entity.TbStoreinfo">
+  	UPDATE caigouinfo SET caihoutime=#{caihoutime},goods=#{goods},gongyingshang=#{gongyingshang},price=#{price},count=#{count},man=#{man},stacus=#{stacus},dindanhao=#{dindanhao} WHERE id=#{id}
+  </update>
+  <update id="kucun_update" parameterType="com.entity.TbStoreinfo">
+  	UPDATE tb_storeinfo SET number=number-'1' WHERE cunkuinfo=#{cunkuinfo} AND lasttime=#{lasttime};
+ </update>
+  <delete id="del" parameterType="com.entity.TbStoreinfo">DELETE FROM caigouinfo WHERE id=#{id} </delete>
+   
+<insert id="insertuser" parameterType="com.entity.TbStoreinfo">
+<![CDATA[
+	INSERT INTO tb_storeinfo VALUES (#{number},#{datetime},#{lasttime},#{more},#{little},#{count},#{cunkuinfo},#{tixindate})
+	]]>
+	</insert>
+</mapper>

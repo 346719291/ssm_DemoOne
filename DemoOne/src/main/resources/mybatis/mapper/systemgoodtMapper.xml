@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.systemgoodtMapper">
+  <select id="findAll" resultType="BaseSystemgoodslist">
+    SELECT * FROM systemgoodslist
+  </select>	
+  <select id="findByPage" resultType="BaseSystemgoodslist">
+    SELECT * FROM systemgoodslist LIMIT #{pageno},#{pagesize};
+  </select>	
+  <update id="updateuser" parameterType="BaseSystemgoodslist">
+  	UPDATE systemgoodslist SET goodsname=#{goodsname},typeofgoods=#{typeofgoods},guige=#{guige},danwei=#{danwei},dindanhao=#{dindanhao},qmname=#{qmname} WHERE id=#{id}
+  </update>
+  <delete id="del" parameterType="BaseSystemgoodslist">DELETE FROM systemgoodslist WHERE id=#{id} </delete>
+  <insert id="insertuser" parameterType="BaseSystemgoodslist">
+<![CDATA[
+	INSERT INTO systemgoodslist VALUES (#{id},#{goodsname},#{typeofgoods},#{guige},#{danwei},#{dindanhao},#{qmname},#{state})
+]]>
+	
+</insert>
+</mapper>
